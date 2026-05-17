@@ -2,7 +2,7 @@
 
 A handcrafted single-page portfolio for **Mohamed Imam Mohamed Nazar** — final-year Bachelor of Information Technology student at RMIT University, graduating June 2026.
 
-Live at **[mohamed-imam.netlify.app](https://mohamed-imam.netlify.app/)**.
+Live at **[imamnazar.github.io](https://imamnazar.github.io/)**.
 
 ---
 
@@ -10,12 +10,13 @@ Live at **[mohamed-imam.netlify.app](https://mohamed-imam.netlify.app/)**.
 
 - Pure HTML, CSS, and vanilla JavaScript — no framework, no build step
 - Fonts: Fraunces (display serif), Newsreader (body), JetBrains Mono (technical) — via Google Fonts
-- Single CSS file, single JS file, ~2,000 lines total
+- Single CSS file, single JS file
+- Hosted free on GitHub Pages
 - Hand-built in Melbourne
 
 ## Project structure
 
-```
+\`\`\`
 .
 ├── index.html             ← the entire portfolio (single page)
 ├── portfolio.html         ← redirect to /#work (for old deep links)
@@ -29,7 +30,7 @@ Live at **[mohamed-imam.netlify.app](https://mohamed-imam.netlify.app/)**.
     │   └── script.js      ← interaction layer (cursor, reveals, counters)
     └── images/
         └── tabicon.png    ← favicon
-```
+\`\`\`
 
 ---
 
