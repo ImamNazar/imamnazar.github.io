@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohamed Imam — IT graduate from RMIT University (June 2026). Frontend, full-stack, and cloud projects from Melbourne, Australia." />
+  <meta name="author" content="Mohamed Imam Mohamed Nazar" />
+  <meta property="og:title" content="Mohamed Imam — IT Graduate · Melbourne" />
+  <meta property="og:description" content="Frontend, full-stack & cloud projects from a final-year IT student at RMIT. Built with care in Melbourne." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mohamed-imam.netlify.app/" />
+  <meta name="theme-color" content="#0a0907" />
+  <title>Mohamed Imam — IT Graduate · Frontend Developer · Melbourne</title>
+
+  <link rel="icon" type="image/png" href="assets/images/tabicon.png" />
+
+  <!-- Fonts: Fraunces (display, variable), Newsreader (body serif), JetBrains Mono (technical) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <!-- Ambient mouse-tracking glow -->
+  <div class="ambient" aria-hidden="true"></div>
+
+  <!-- Page grain texture -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- Loading screen -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__name">Mohamed Imam</span>
+      <span class="loader__counter">000</span>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- NAVIGATION -->
+  <!-- ============================================================ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand" data-hover>
+        <svg class="nav__brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <text x="20" y="26" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="18" fill="currentColor">m</text>
+        </svg>
+        <span class="nav__brand-text">Mohamed Imam</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about"     data-nav data-hover><span class="nav__num">01</span><span>About</span></a>
+        <a href="#work"      data-nav data-hover><span class="nav__num">02</span><span>Work</span></a>
+        <a href="#stack"     data-nav data-hover><span class="nav__num">03</span><span>Stack</span></a>
+        <a href="#education" data-nav data-hover><span class="nav__num">04</span><span>Education</span></a>
+        <a href="#contact"   data-nav data-hover><span class="nav__num">05</span><span>Contact</span></a>
+      </nav>
+
+      <div class="nav__status" data-hover>
+        <span class="nav__status-dot" aria-hidden="true"></span>
+        <span class="nav__status-text">Available <em>Jun 26</em></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+  <!-- ============================================================ -->
+  <!-- HERO -->
+  <!-- ============================================================ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+    </div>
+
+    <div class="hero__grid">
+      <!-- Top bar with meta -->
+      <div class="hero__topbar">
+        <span class="hero__meta-item"><em>52</em> Melbourne, AU</span>
+        <span class="hero__meta-item"><em>54</em> Portfolio · 2026</span>
+        <span class="hero__meta-item">Edition <em>VII</em></span>
+      </div>
+
+      <!-- The big name -->
+      <h1 class="hero__title">
+        <span class="hero__title-line">
+          <span class="hero__char" data-char>M</span><span class="hero__char" data-char>o</span><span class="hero__char" data-char>h</span><span class="hero__char" data-char>a</span><span class="hero__char" data-char>m</span><span class="hero__char" data-char>e</span><span class="hero__char" data-char>d</span>
+        </span>
+        <span class="hero__title-line hero__title-line--italic">
+          <span class="hero__char" data-char>I</span><span class="hero__char" data-char>m</span><span class="hero__char" data-char>a</span><span class="hero__char" data-char>m</span><span class="hero__char" data-char>.</span>
+        </span>
+      </h1>
+
+      <!-- Subtitle / strapline -->
+      <div class="hero__strap">
+        <div class="hero__strap-divider" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="hero__strap-text">
+          <span class="word-reveal">A</span>
+          <span class="word-reveal">final-year</span>
+          <span class="word-reveal">Bachelor</span>
+          <span class="word-reveal">of</span>
+          <span class="word-reveal">Information</span>
+          <span class="word-reveal">Technology</span>
+          <span class="word-reveal">student</span>
+          <span class="word-reveal">at</span>
+          <span class="word-reveal accent">RMIT&nbsp;University</span>,
+          <span class="word-reveal">building</span>
+          <span class="word-reveal">full-stack</span>
+          <span class="word-reveal">web&nbsp;applications</span>,
+          <span class="word-reveal">cloud-deployed</span>
+          <span class="word-reveal">infrastructure</span>,
+          <span class="word-reveal">and</span>
+          <span class="word-reveal">careful</span>
+          <span class="word-reveal">interfaces</span>
+          <span class="word-reveal">from</span>
+          <span class="word-reveal accent">Melbourne,&nbsp;Australia</span>.
+        </p>
+      </div>
+
+      <!-- Hero action row -->
+      <div class="hero__actions">
+        <a href="#work" class="cta cta--primary" data-hover data-magnetic>
+          <span class="cta__bg" aria-hidden="true"></span>
+          <span class="cta__label">View selected work</span>
+          <svg class="cta__arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="mailto:mimammnazar@gmail.com" class="cta cta--ghost" data-hover data-magnetic>
+          <span class="cta__label">mimammnazar@gmail.com</span>
+        </a>
+      </div>
+
+      <!-- Footer index of hero -->
+      <div class="hero__footer">
+        <div class="hero__footer-col">
+          <span class="hero__footer-label">Currently</span>
+          <span class="hero__footer-value">Building Share &amp; Swap Shop</span>
+        </div>
+        <div class="hero__footer-col">
+          <span class="hero__footer-label">Graduating</span>
+          <span class="hero__footer-value">June 2026 · RMIT</span>
+        </div>
+        <div class="hero__footer-col">
+          <span class="hero__footer-label">Open to</span>
+          <span class="hero__footer-value">Graduate IT roles</span>
+        </div>
+        <div class="hero__footer-col">
+          <span class="hero__footer-label">Scroll</span>
+          <span class="hero__footer-value hero__footer-value--scroll">
+            ↓<span></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MARQUEE STRIP -->
+  <!-- ============================================================ -->
+  <div class="strip" aria-hidden="true">
+    <div class="strip__track">
+      <span>JavaScript</span><i></i>
+      <span>React</span><i></i>
+      <span>PHP &amp; MySQL</span><i></i>
+      <span>REST APIs</span><i></i>
+      <span>AWS · Docker · Terraform</span><i></i>
+      <span>CI/CD with GitHub Actions</span><i></i>
+      <span>QA · JUnit · Selenium · JMeter</span><i></i>
+      <span>IT Support &amp; POS Systems</span><i></i>
+      <span>JavaScript</span><i></i>
+      <span>React</span><i></i>
+      <span>PHP &amp; MySQL</span><i></i>
+      <span>REST APIs</span><i></i>
+      <span>AWS · Docker · Terraform</span><i></i>
+      <span>CI/CD with GitHub Actions</span><i></i>
+      <span>QA · JUnit · Selenium · JMeter</span><i></i>
+      <span>IT Support &amp; POS Systems</span><i></i>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- ABOUT -->
+  <!-- ============================================================ -->
+  <section id="about" class="section section--about">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 01</span>
+        <span class="section__label">About the developer</span>
+      </div>
+      <h2 class="section__title">
+        <span data-reveal>The</span>
+        <span data-reveal><em>person</em></span>
+        <span data-reveal>behind</span>
+        <span data-reveal>the</span>
+        <span data-reveal><em>portfolio</em>.</span>
+      </h2>
+    </div>
+
+    <div class="about">
+      <div class="about__lead" data-reveal>
+        <p>
+          I'm a 25-year-old developer based in Melbourne, finishing my
+          <span class="emphasis">Bachelor of Information Technology</span> at RMIT University in June 2026.
+          Before that I completed a Higher Diploma in Computing &amp; Software Engineering and spent over a
+          year working as an IT Specialist for a small trading business — fixing the things that broke and
+          building the things that didn't yet exist.
+        </p>
+        <p>
+          My work sits at the intersection of frontend craft and real-world IT operations. I've shipped
+          full-stack web apps with live REST API integrations, set up CI/CD pipelines with GitHub Actions,
+          automated cloud deployments with Terraform and Ansible on AWS, and supported end-users through
+          hardware, POS, and network issues.
+        </p>
+        <p>
+          What I care about most: software that handles its own edge cases, interfaces that respect the
+          reader, and work I'd be willing to put my name on.
+        </p>
+      </div>
+
+      <aside class="about__panel" data-reveal>
+        <div class="panel">
+          <div class="panel__row">
+            <span class="panel__key">Currently</span>
+            <span class="panel__val">Final-year BIT, RMIT</span>
+          </div>
+          <div class="panel__row">
+            <span class="panel__key">Looking for</span>
+            <span class="panel__val">Graduate IT roles, Melbourne</span>
+          </div>
+          <div class="panel__row">
+            <span class="panel__key">Work rights</span>
+            <span class="panel__val">Full, from June 2026</span>
+          </div>
+          <div class="panel__row">
+            <span class="panel__key">Languages</span>
+            <span class="panel__val">English · Tamil · Sinhala</span>
+          </div>
+          <div class="panel__row">
+            <span class="panel__key">Coffee</span>
+            <span class="panel__val">Flat white, two sugars</span>
+          </div>
+        </div>
+
+        <!-- Animated stats -->
+        <div class="stats" data-reveal>
+          <div class="stat">
+            <span class="stat__num" data-count="6">0</span>
+            <span class="stat__lbl">Projects shipped</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="8" data-prefix="">0</span>
+            <span class="stat__lbl">Languages spoken<br/><em>(programming)</em></span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="3" data-suffix="">0</span>
+            <span class="stat__lbl">High Distinctions<br/><em>at RMIT</em></span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="18">0</span>
+            <span class="stat__lbl">Months of professional IT experience</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SELECTED WORK -->
+  <!-- ============================================================ -->
+  <section id="work" class="section section--work">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 02</span>
+        <span class="section__label">Selected work · 2022 – 2026</span>
+      </div>
+      <h2 class="section__title">
+        <span data-reveal>Six</span>
+        <span data-reveal>things</span>
+        <span data-reveal>I've</span>
+        <span data-reveal><em>built</em>.</span>
+      </h2>
+      <p class="section__lede" data-reveal>
+        Most recent first. The first two are full case studies. Stacks listed honestly — links to live
+        sites or source where available.
+      </p>
+    </div>
+
+    <!-- ─────────────  Featured case study #1: SaSS  ───────────── -->
+    <article class="case" data-reveal>
+      <header class="case__hdr">
+        <div class="case__index">01</div>
+        <span class="case__tag"><span></span>Featured case study</span>
+        <h3 class="case__title">
+          <span>Share &amp;</span>
+          <span><em>Swap Shop</em></span>
+        </h3>
+        <div class="case__meta">
+          <span>2026</span><i></i>
+          <span>RMIT Programming Project</span><i></i>
+          <span>Real client work</span><i></i>
+          <span class="case__meta-pin">Most recent</span>
+        </div>
+      </header>
+
+      <p class="case__summary">
+        A full-stack website for a Melbourne pop-up swap collective. Events sync automatically from the
+        client's existing Humanitix ticketing account — zero manual website updates required, ever.
+      </p>
+
+      <div class="case__cols">
+        <div class="case__col">
+          <h4 class="case__h">The problem</h4>
+          <p>
+            A non-technical community team needed a polished website where event listings stayed accurate
+            without them touching code. They already used Humanitix for ticketing — the site had to be the
+            single source of truth without becoming a maintenance burden.
+          </p>
+        </div>
+        <div class="case__col">
+          <h4 class="case__h">The approach</h4>
+          <p>
+            Three phases before any production code: a platform comparison report (WordPress vs Squarespace
+            vs Wix Studio with Velo), then complete UX wireframes for all 8 pages with a Figma design token
+            system, then the build.
+          </p>
+        </div>
+      </div>
+
+      <div class="case__doing">
+        <h4 class="case__h">What I did, specifically</h4>
+        <ol class="case__list">
+          <li>
+            <span class="case__lk">API integration</span>
+            <span class="case__lv">Server-side <code>.jsw</code> backend authenticating to Humanitix's REST API and normalising messy responses (locations as strings <em>or</em> objects, recurring events, missing fields) through five helper functions.</span>
+          </li>
+          <li>
+            <span class="case__lk">Security</span>
+            <span class="case__lv">Caught a hardcoded API key in the source mid-development. Regenerated it on Humanitix and moved credentials into Wix Secrets Manager — key never touches the browser, never appears in any file.</span>
+          </li>
+          <li>
+            <span class="case__lk">Performance</span>
+            <span class="case__lv">10-second TTL in-memory cache plus promise deduplication, so concurrent page loads share one in-flight API request rather than hammering Humanitix.</span>
+          </li>
+          <li>
+            <span class="case__lk">Defensive coding</span>
+            <span class="case__lv">Every <code>$w()</code> DOM call wrapped in a <code>safeSet()</code> guard, so missing elements never throw and stop the page render.</span>
+          </li>
+          <li>
+            <span class="case__lk">Debugging</span>
+            <span class="case__lv">Found a silent filter where <code>e.published === true</code> excluded every event (the field doesn't exist in the public API, so the comparison was always false). Removed it, added stage-by-stage console tracing.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="case__lesson" data-reveal>
+        <span class="case__lesson-pin">What it taught me</span>
+        <p>
+          Silent failures are harder to debug than thrown errors. The <code>published</code> filter never
+          threw — it just quietly returned an empty array. Stage tracing through the data pipeline turned
+          a day's hunt into a five-minute fix. Also: an API key hardcoded "just for testing" is a
+          compromised key. Same time, no risk — use the secrets manager from line one.
+        </p>
+      </div>
+
+      <div class="case__numbers">
+        <div class="num"><span class="num__v">29</span><span class="num__l">Hours logged</span></div>
+        <div class="num"><span class="num__v">8</span><span class="num__l">Pages shipped</span></div>
+        <div class="num"><span class="num__v">4</span><span class="num__l">Bugs caught &amp; fixed</span></div>
+        <div class="num"><span class="num__v">1</span><span class="num__l">Live API integrated</span></div>
+      </div>
+
+      <ul class="case__stack" role="list">
+        <li>JavaScript (ES6+)</li>
+        <li>Velo by Wix (<code>.jsw</code>)</li>
+        <li>REST API</li>
+        <li>Wix Secrets Manager</li>
+        <li>Figma · Tokens Studio</li>
+        <li>async / await</li>
+      </ul>
+    </article>
+
+    <!-- ─────────────  Featured case study #2: DevOps  ───────────── -->
+    <article class="case case--alt" data-reveal>
+      <header class="case__hdr">
+        <div class="case__index">02</div>
+        <span class="case__tag"><span></span>Featured case study</span>
+        <h3 class="case__title">
+          <span>DevOps Pipeline &amp;</span>
+          <span><em>Cloud Deployment Automation</em></span>
+        </h3>
+        <div class="case__meta">
+          <span>2024</span><i></i>
+          <span>RMIT — Systems Deployment &amp; Operations</span><i></i>
+          <span class="case__meta-pin case__meta-pin--gold">Distinction</span>
+        </div>
+      </header>
+
+      <p class="case__summary">
+        Two assignments, one continuous theme — take a working application from "deploys manually if you
+        remember the steps" to "anyone on the team can ship it with one PR merge."
+      </p>
+
+      <div class="case__cols">
+        <div class="case__col">
+          <h4 class="case__h">The problem</h4>
+          <p>
+            Manual deployments are slow, error-prone, and impossible to audit. The unit's two assignments
+            wanted a working CI/CD pipeline and a fully Infrastructure-as-Code deployment story for two
+            different Node.js apps — one backed by MongoDB, one by PostgreSQL.
+          </p>
+        </div>
+        <div class="case__col">
+          <h4 class="case__h">The approach</h4>
+          <p>
+            Treat the pipeline like a product in its own right: branch protections, automated tests on
+            every pull request, and a deployment path defined entirely in version-controlled code, so
+            it's reproducible from a clean machine.
+          </p>
+        </div>
+      </div>
+
+      <div class="case__doing">
+        <h4 class="case__h">What I did, specifically</h4>
+        <ol class="case__list">
+          <li>
+            <span class="case__lk">CI pipeline</span>
+            <span class="case__lv">Built a GitHub Actions workflow for a Node.js / Express / MongoDB app under a GitHub Flow branching strategy. Every PR triggers install, lint, and test jobs before merge to <code>main</code> is allowed.</span>
+          </li>
+          <li>
+            <span class="case__lk">Provisioning</span>
+            <span class="case__lv">Wrote Terraform configs to spin up AWS EC2 instances and the surrounding network resources — versioned, reviewed via PR, destroyable with one command.</span>
+          </li>
+          <li>
+            <span class="case__lk">Configuration</span>
+            <span class="case__lv">Ansible playbooks handle the post-provision side: installing Docker, pulling images, wiring environment variables, starting the Node.js + PostgreSQL service.</span>
+          </li>
+          <li>
+            <span class="case__lk">Containers</span>
+            <span class="case__lv">Dockerised the apps so the developer environment, the CI runner, and the AWS host all see the same runtime.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="case__lesson" data-reveal>
+        <span class="case__lesson-pin">What it taught me</span>
+        <p>
+          Infrastructure-as-Code is the difference between "it deploys" and "anyone can deploy it." The
+          first time you destroy your environment and rebuild it from a clean clone in fifteen minutes is
+          genuinely satisfying. Also: separation of concerns matters here — Terraform for what exists,
+          Ansible for what's installed on it, Docker for what runs inside it. Mixing those responsibilities
+          gets messy quickly.
+        </p>
+      </div>
+
+      <ul class="case__stack" role="list">
+        <li>AWS EC2</li>
+        <li>Terraform</li>
+        <li>Ansible</li>
+        <li>Docker</li>
+        <li>GitHub Actions</li>
+        <li>Node.js · MongoDB · PostgreSQL</li>
+      </ul>
+    </article>
+
+    <!-- ─────────────  Compact project cards  ───────────── -->
+    <ul class="cards" role="list">
+      <li class="card" data-reveal data-hover>
+        <span class="card__num">03</span>
+        <h3 class="card__title">MkCare</h3>
+        <span class="card__meta">2022 · Higher Diploma Capstone · ICBT</span>
+        <p class="card__body">
+          A responsive hospital management web application with three role-based portals — patient, doctor,
+          administrator — sharing a single MySQL database. Each role gets the views and permissions it
+          needs and nothing it doesn't.
+        </p>
+        <ul class="card__stack" role="list">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
+        </ul>
+        <a class="card__link" href="https://github.com/ImamNazar/MKCare_webApp" target="_blank" rel="noopener" data-hover>
+          <span>Source on GitHub</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </a>
+      </li>
+
+      <li class="card" data-reveal data-hover>
+        <span class="card__num">04</span>
+        <h3 class="card__title">SKY Ticketing</h3>
+        <span class="card__meta">2024 · Frontend contribution at INVECT TECH</span>
+        <p class="card__body">
+          A single-page React application for a real-time ticketing agency — Google Maps integration,
+          GSAP-powered animations, EmailJS-backed contact form, and a full responsive component library
+          stitched together with React Router.
+        </p>
+        <ul class="card__stack" role="list">
+          <li>React.js</li><li>React Router</li><li>Google Maps API</li><li>GSAP</li><li>EmailJS</li>
+        </ul>
+        <a class="card__link" href="https://sky-ticketing.com/" target="_blank" rel="noopener" data-hover>
+          <span>Live site</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </a>
+      </li>
+
+      <li class="card" data-reveal data-hover>
+        <span class="card__num">05</span>
+        <h3 class="card__title">Elegant Wardrobe</h3>
+        <span class="card__meta">2022 · Full-stack e-commerce build</span>
+        <p class="card__body">
+          A complete responsive online clothing store — customer browsing, cart, checkout, registration,
+          plus a full admin panel for orders, users, and inventory across men / women / kids categories.
+          CRUD operations all the way down.
+        </p>
+        <ul class="card__stack" role="list">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>PHP</li><li>MySQL</li>
+        </ul>
+        <a class="card__link" href="https://github.com/ImamNazar/ElegantWardrobe_webApp" target="_blank" rel="noopener" data-hover>
+          <span>Source on GitHub</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </a>
+      </li>
+
+      <li class="card" data-reveal data-hover>
+        <span class="card__num">06</span>
+        <h3 class="card__title">Software Testing Suite</h3>
+        <span class="card__meta">2025 · RMIT — Software Testing</span>
+        <p class="card__body">
+          Three structured assignments covering the QA toolchain end-to-end: test case planning and
+          execution, JUnit unit testing with static code analysis on a Java codebase via formal inspection
+          checklists, and automated UI / load / BDD testing with Selenium, JMeter, and Cucumber.
+        </p>
+        <ul class="card__stack" role="list">
+          <li>JUnit</li><li>Selenium</li><li>JMeter</li><li>Cucumber</li><li>Static analysis</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- STACK -->
+  <!-- ============================================================ -->
+  <section id="stack" class="section section--stack">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 03</span>
+        <span class="section__label">Stack · what I reach for</span>
+      </div>
+      <h2 class="section__title">
+        <span data-reveal>The</span>
+        <span data-reveal><em>tools</em></span>
+        <span data-reveal>I</span>
+        <span data-reveal>reach</span>
+        <span data-reveal>for.</span>
+      </h2>
+      <p class="section__lede" data-reveal>
+        Organised by what each thing actually does — not by hype. Hover for a small note on each.
+      </p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/01</span>
+        <h3>Frontend</h3>
+        <p>Where the user actually lives. I care about it.</p>
+        <ul role="list">
+          <li>JavaScript (ES6+)</li>
+          <li>React.js · React Router</li>
+          <li>HTML5 · CSS3</li>
+          <li>Responsive design</li>
+          <li>Wix Studio / Velo</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/02</span>
+        <h3>Backend &amp; APIs</h3>
+        <p>Server-side logic, integrations, the wiring.</p>
+        <ul role="list">
+          <li>Node.js · Express</li>
+          <li>ASP.NET</li>
+          <li>PHP</li>
+          <li>REST API integration</li>
+          <li>async / await · Promises</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/03</span>
+        <h3>Databases</h3>
+        <p>Schema design, queries, keeping data honest.</p>
+        <ul role="list">
+          <li>MySQL</li>
+          <li>Relational schema design</li>
+          <li>MS Access</li>
+          <li>MongoDB (basic)</li>
+          <li>PostgreSQL (intro)</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell stack-cell--accent" data-reveal data-hover>
+        <span class="stack-cell__num">/04</span>
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Where my <strong>HD in Cloud Foundations</strong> lives.</p>
+        <ul role="list">
+          <li>AWS · EC2</li>
+          <li>Docker</li>
+          <li>Terraform</li>
+          <li>Ansible</li>
+          <li>GitHub Actions · CI/CD</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/05</span>
+        <h3>Testing &amp; QA</h3>
+        <p>Catching things before users do.</p>
+        <ul role="list">
+          <li>JUnit</li>
+          <li>Selenium</li>
+          <li>JMeter (load)</li>
+          <li>Cucumber (BDD)</li>
+          <li>Static analysis</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/06</span>
+        <h3>IT Support</h3>
+        <p>1.5+ years of doing this for a living.</p>
+        <ul role="list">
+          <li>Hardware troubleshooting</li>
+          <li>POS systems</li>
+          <li>Windows OS</li>
+          <li>Network basics</li>
+          <li>End-user training</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/07</span>
+        <h3>Languages</h3>
+        <p>What I can read, write, and reason in.</p>
+        <ul role="list">
+          <li>JavaScript · TypeScript (intro)</li>
+          <li>Java</li>
+          <li>C# · C++</li>
+          <li>PHP</li>
+          <li>SQL · Python (basic)</li>
+        </ul>
+      </div>
+
+      <div class="stack-cell" data-reveal data-hover>
+        <span class="stack-cell__num">/08</span>
+        <h3>Tools</h3>
+        <p>The daily-driver software.</p>
+        <ul role="list">
+          <li>Git · GitHub</li>
+          <li>VS Code</li>
+          <li>Figma · Tokens Studio</li>
+          <li>Microsoft Office</li>
+          <li>Postman</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- EDUCATION -->
+  <!-- ============================================================ -->
+  <section id="education" class="section section--edu">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 04</span>
+        <span class="section__label">Education · grades that matter</span>
+      </div>
+      <h2 class="section__title">
+        <span data-reveal>The</span>
+        <span data-reveal><em>academic</em></span>
+        <span data-reveal>record.</span>
+      </h2>
+    </div>
+
+    <div class="edu" data-reveal>
+      <header class="edu__hdr">
+        <div>
+          <h3 class="edu__title">Bachelor of Information Technology</h3>
+          <p class="edu__where">RMIT University · Melbourne, Australia</p>
+        </div>
+        <div class="edu__when">
+          <span>Jul 2023 — Jun 2026</span>
+          <span class="edu__when-tag">expected</span>
+        </div>
+      </header>
+
+      <div class="grades">
+        <div class="grade-row">
+          <div class="grade-rank">
+            <span class="grade-rank__big">HD</span>
+            <span class="grade-rank__sub">High Distinction</span>
+          </div>
+          <ul class="grade-list" role="list">
+            <li>Cloud Foundations</li>
+            <li>Introduction to Cyber Security</li>
+            <li>Innovation Ecosystem &amp; Future of Work</li>
+          </ul>
+        </div>
+        <div class="grade-row">
+          <div class="grade-rank">
+            <span class="grade-rank__big">DI</span>
+            <span class="grade-rank__sub">Distinction</span>
+          </div>
+          <ul class="grade-list" role="list">
+            <li>Systems Deployment &amp; Operations <span class="grade-list__note">DevOps</span></li>
+            <li>Essentials of IT &amp; Ethics</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="coursework">
+        <h4>Relevant coursework</h4>
+        <p>
+          Systems Deployment &amp; Operations · Cloud Foundations · Software Testing · Database Applications
+          · Introduction to Cyber Security · Software Engineering Fundamentals · Software Engineering
+          Project Management · Data Communication &amp; Net-Centric Computing · Foundations of AI for STEM.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu" data-reveal>
+      <header class="edu__hdr">
+        <div>
+          <h3 class="edu__title">Higher Diploma in Computing &amp; Software Engineering</h3>
+          <p class="edu__where">ICBT Campus · Sri Lanka</p>
+        </div>
+        <div class="edu__when">
+          <span>Jan 2020 — Sep 2022</span>
+        </div>
+      </header>
+      <p class="edu__note">
+        Capstone project: <strong>MkCare</strong> hospital management web application
+        (see <a href="#work" data-hover>selected work</a>). Member of the Rotaract Club of ICBT.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- EXPERIENCE -->
+  <!-- ============================================================ -->
+  <section id="experience" class="section section--exp">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 05</span>
+        <span class="section__label">Experience · the working history</span>
+      </div>
+      <h2 class="section__title">
+        <span data-reveal>Where</span>
+        <span data-reveal>I've</span>
+        <span data-reveal><em>worked</em>.</span>
+      </h2>
+    </div>
+
+    <ol class="timeline" role="list">
+      <li class="tl-row" data-reveal>
+        <span class="tl-when">2023 — 2024</span>
+        <div class="tl-body">
+          <h3>Business Executive &amp; IT Specialist</h3>
+          <p class="tl-where">AWS Trading (Pvt) Ltd · Sri Lanka</p>
+          <p>
+            End-user IT support, POS troubleshooting, website maintenance, hardware and network
+            diagnostics, and staff training across a family-run trading business.
+          </p>
+        </div>
+      </li>
+      <li class="tl-row" data-reveal>
+        <span class="tl-when">2022</span>
+        <div class="tl-body">
+          <h3>Data Research Analyst</h3>
+          <p class="tl-where">Intelligent Image Management (IIMI) · Sri Lanka / USA</p>
+          <p>
+            High-accuracy keying and transcription for AI training datasets and genealogy / family-history
+            records, inside a 4,200+ employee global operation serving US-based clients.
+          </p>
+        </div>
+      </li>
+      <li class="tl-row" data-reveal>
+        <span class="tl-when">2024 — present</span>
+        <div class="tl-body">
+          <h3>Sales Associate &amp; Fresh Produce Assistant</h3>
+          <p class="tl-where">TKMaxx Australia · Sacca's Fine Foods — Broadmeadows, VIC</p>
+          <p>
+            Australian retail work alongside full-time IT studies — high-volume customer service,
+            stock-handling, and reliable shift work.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT -->
+  <!-- ============================================================ -->
+  <section id="contact" class="section section--contact">
+    <div class="section__head">
+      <div class="section__head-meta">
+        <span class="section__num">§ 06</span>
+        <span class="section__label">Contact · let's talk</span>
+      </div>
+      <h2 class="section__title contact__title">
+        <span data-reveal>Have</span>
+        <span data-reveal>a</span>
+        <span data-reveal><em>graduate</em></span>
+        <span data-reveal>role?</span>
+        <br />
+        <span data-reveal>Let's</span>
+        <span data-reveal><em>talk</em>.</span>
+      </h2>
+    </div>
+
+    <div class="contact" data-reveal>
+      <p class="contact__lead">
+        I'm looking for graduate roles in Melbourne — <span class="emphasis">IT Support, Service Desk,
+        Frontend Development, IT Specialist, or IT Analyst</span>. Open to other Australian cities too.
+        Quickest way to reach me is email.
+      </p>
+
+      <ul class="contact__list" role="list">
+        <li data-hover>
+          <span class="contact__lbl">Email</span>
+          <a href="mailto:mimammnazar@gmail.com">
+            <span>mimammnazar@gmail.com</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li data-hover>
+          <span class="contact__lbl">Phone</span>
+          <a href="tel:+61459992281">
+            <span>0459 992 281</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li data-hover>
+          <span class="contact__lbl">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/mohamed-imam-mohamed-nazar-92148b19a" target="_blank" rel="noopener">
+            <span>mohamed-imam-mohamed-nazar</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+        <li data-hover>
+          <span class="contact__lbl">GitHub</span>
+          <a href="https://github.com/ImamNazar" target="_blank" rel="noopener">
+            <span>github.com/ImamNazar</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================================ -->
+  <footer class="footer">
+    <div class="footer__big" aria-hidden="true">
+      <span>MOHAMED</span>
+      <span class="footer__big--italic">Imam</span>
+    </div>
+    <div class="footer__row">
+      <p>© <span id="year"></span> Mohamed Imam Mohamed Nazar. Hand-built in Melbourne.</p>
+      <p>Set in Fraunces, Newsreader &amp; JetBrains Mono.</p>
+      <p><a href="#top" data-hover>Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>
