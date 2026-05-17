@@ -16,7 +16,6 @@ Live at **[imamnazar.github.io](https://imamnazar.github.io/)**.
 
 ## Project structure
 
-\`\`\`
 .
 ├── index.html             ← the entire portfolio (single page)
 ├── portfolio.html         ← redirect to /#work (for old deep links)
@@ -30,7 +29,7 @@ Live at **[imamnazar.github.io](https://imamnazar.github.io/)**.
     │   └── script.js      ← interaction layer (cursor, reveals, counters)
     └── images/
         └── tabicon.png    ← favicon
-\`\`\`
+
 
 ---
 
