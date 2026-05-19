@@ -290,14 +290,14 @@
         <span class="section__label">Selected work · 2022 – 2026</span>
       </div>
       <h2 class="section__title">
-        <span data-reveal>Six</span>
+        <span data-reveal>Seven</span>
         <span data-reveal>things</span>
         <span data-reveal>I've</span>
         <span data-reveal><em>built</em>.</span>
       </h2>
       <p class="section__lede" data-reveal>
-        Most recent first. The first two are full case studies. Stacks listed honestly — links to live
-        sites or source where available.
+        Most recent first. The first three are full case studies — one of them a live tool you can use
+        right now. Stacks listed honestly — links to live sites or source where available.
       </p>
     </div>
 
@@ -478,10 +478,102 @@
       </ul>
     </article>
 
+    <!-- ─────────────  Featured: Grad Job Tracker (LIVE)  ───────────── -->
+    <article class="case" data-reveal>
+      <header class="case__hdr">
+        <div class="case__index">03</div>
+        <span class="case__tag"><span></span>Featured · live tool</span>
+        <h3 class="case__title">
+          <span>Grad Job</span>
+          <span><em>Tracker</em></span>
+        </h3>
+        <div class="case__meta">
+          <span>2026</span><i></i>
+          <span>Personal project</span><i></i>
+          <span class="case__meta-pin case__meta-pin--gold">Try it live</span>
+        </div>
+      </header>
+
+      <p class="case__summary">
+        A tool I built for my own graduate job hunt — because a spreadsheet wasn't cutting it. A
+        focused application tracker you can actually use right now, in your browser.
+      </p>
+
+      <div class="case__cols">
+        <div class="case__col">
+          <h4 class="case__h">The problem</h4>
+          <p>
+            Tracking dozens of applications across stages — applied, screening, interview — in a
+            spreadsheet is clumsy and easy to let slip. I wanted something purpose-built that I'd
+            actually open every day during the hunt.
+          </p>
+        </div>
+        <div class="case__col">
+          <h4 class="case__h">The approach</h4>
+          <p>
+            Build it deliberately without a framework — clean state management, DOM rendering, and
+            client-side persistence handled directly. Zero dependencies so it loads instantly and
+            nothing can break.
+          </p>
+        </div>
+      </div>
+
+      <div class="case__doing">
+        <h4 class="case__h">What it does</h4>
+        <ol class="case__list">
+          <li>
+            <span class="case__lk">Pipeline board</span>
+            <span class="case__lv">Six-stage kanban — Wishlist → Applied → Screening → Interview → Offer / Rejected — with one-click stage moves.</span>
+          </li>
+          <li>
+            <span class="case__lk">Live stats</span>
+            <span class="case__lv">Total tracked, active applications, and a computed interview-rate metric that updates as the data changes.</span>
+          </li>
+          <li>
+            <span class="case__lk">Persistence</span>
+            <span class="case__lv">Everything saves to <code>localStorage</code> — survives refreshes, no account, no backend, data stays on the user's device.</span>
+          </li>
+          <li>
+            <span class="case__lk">Search &amp; filter</span>
+            <span class="case__lv">Live text search across company / role / location, plus stage filtering, with event-delegated rendering.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="case__lesson" data-reveal>
+        <span class="case__lesson-pin">Why no framework</span>
+        <p>
+          Reaching for React isn't always the answer. Built directly, this loads instantly, has zero
+          dependencies, and nothing in the supply chain can break it. Knowing when not to add a
+          framework is its own skill.
+        </p>
+      </div>
+
+      <div class="case__links" style="margin:28px 0 4px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="https://imamnazar.github.io/grad-job-tracker/" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:9px;background:var(--acc);color:var(--bg);font-family:var(--mono);font-size:13px;font-weight:500;padding:13px 24px;border-radius:999px">
+          Launch the tool
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+        <a href="https://github.com/ImamNazar/grad-job-tracker" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-family:var(--mono);font-size:13px;padding:13px 24px;border:1px solid var(--line-mid);border-radius:999px">
+          Source on GitHub
+        </a>
+      </div>
+
+      <ul class="case__stack" role="list">
+        <li>Vanilla JavaScript</li>
+        <li>localStorage</li>
+        <li>Zero dependencies</li>
+        <li>Responsive CSS</li>
+        <li>Event delegation</li>
+      </ul>
+    </article>
+
     <!-- ─────────────  Compact project cards  ───────────── -->
     <ul class="cards" role="list">
       <li class="card" data-reveal data-hover>
-        <span class="card__num">03</span>
+        <span class="card__num">04</span>
         <h3 class="card__title">MkCare</h3>
         <span class="card__meta">2022 · Higher Diploma Capstone · ICBT</span>
         <p class="card__body">
@@ -499,7 +591,7 @@
       </li>
 
       <li class="card" data-reveal data-hover>
-        <span class="card__num">04</span>
+        <span class="card__num">05</span>
         <h3 class="card__title">SKY Ticketing</h3>
         <span class="card__meta">2024 · Frontend contribution at INVECT TECH</span>
         <p class="card__body">
@@ -517,7 +609,7 @@
       </li>
 
       <li class="card" data-reveal data-hover>
-        <span class="card__num">05</span>
+        <span class="card__num">06</span>
         <h3 class="card__title">Elegant Wardrobe</h3>
         <span class="card__meta">2022 · Full-stack e-commerce build</span>
         <p class="card__body">
@@ -535,7 +627,7 @@
       </li>
 
       <li class="card" data-reveal data-hover>
-        <span class="card__num">06</span>
+        <span class="card__num">07</span>
         <h3 class="card__title">Software Testing Suite</h3>
         <span class="card__meta">2025 · RMIT — Software Testing</span>
         <p class="card__body">
