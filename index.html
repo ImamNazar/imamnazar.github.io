@@ -290,13 +290,13 @@
         <span class="section__label">Selected work · 2022 – 2026</span>
       </div>
       <h2 class="section__title">
-        <span data-reveal>Seven</span>
+        <span data-reveal>Eight</span>
         <span data-reveal>things</span>
         <span data-reveal>I've</span>
         <span data-reveal><em>built</em>.</span>
       </h2>
       <p class="section__lede" data-reveal>
-        Most recent first. The first three are full case studies — one of them a live tool you can use
+        Most recent first. The first four are full case studies — one of them a live tool you can use
         right now. Stacks listed honestly — links to live sites or source where available.
       </p>
     </div>
@@ -478,10 +478,134 @@
       </ul>
     </article>
 
-    <!-- ─────────────  Featured: Grad Job Tracker (LIVE)  ───────────── -->
+    <!-- ─────────────  Featured case study #3: AWS Cloud Infrastructure  ───────────── -->
     <article class="case" data-reveal>
       <header class="case__hdr">
         <div class="case__index">03</div>
+        <span class="case__tag"><span></span>Featured case study</span>
+        <h3 class="case__title">
+          <span>AWS Cloud</span>
+          <span><em>Infrastructure Build</em></span>
+        </h3>
+        <div class="case__meta">
+          <span>2024</span><i></i>
+          <span>RMIT — Cloud Foundations</span><i></i>
+          <span class="case__meta-pin case__meta-pin--gold">High Distinction</span>
+        </div>
+      </header>
+
+      <p class="case__summary">
+        A full production-shaped AWS environment, built by hand in the console — networking, Linux
+        servers, storage, databases, and an auto-scaling web tier. Not a tutorial follow-along: every
+        resource was provisioned, connected, secured, and verified end to end.
+      </p>
+
+      <div class="case__cols">
+        <div class="case__col">
+          <h4 class="case__h">The problem</h4>
+          <p>
+            Take a small business website running on a single server and re-platform it as a real cloud
+            deployment: isolated networking across multiple availability zones, a private link to an
+            on-premises network, encrypted traffic, durable storage, and a web tier that survives load
+            and instance failure — all reproducible from the console.
+          </p>
+        </div>
+        <div class="case__col">
+          <h4 class="case__h">The approach</h4>
+          <p>
+            Build it the way an operations team actually runs a data centre: network first, then compute,
+            then storage and data, then resilience. Lock each layer down with least-privilege security
+            groups and IAM, and prove every piece works before moving to the next.
+          </p>
+        </div>
+      </div>
+
+      <div class="case__doing">
+        <h4 class="case__h">What I did, specifically</h4>
+        <ol class="case__list">
+          <li>
+            <span class="case__lk">Network foundation</span>
+            <span class="case__lv">Built a VPC spanning three availability zones — three public and three private subnets, separate public/private route tables, an internet gateway and a NAT gateway, and security groups scoped to HTTP, HTTPS and SSH only.</span>
+          </li>
+          <li>
+            <span class="case__lk">Hybrid connectivity</span>
+            <span class="case__lv">Linked the private subnets to a simulated on-premises network (<code>192.168.10.0/24</code>) with a site-to-site VPN — customer gateway, virtual private gateway, and the routing to make the two networks talk.</span>
+          </li>
+          <li>
+            <span class="case__lk">Compute &amp; Linux</span>
+            <span class="case__lv">Launched Linux EC2 instances via user-data (Apache + MariaDB + PHP), assigned a persistent Elastic IP, connected over SSH, and verified the web and PHP stack from the command line.</span>
+          </li>
+          <li>
+            <span class="case__lk">TLS &amp; hardening</span>
+            <span class="case__lv">Generated a private key and CSR with <code>openssl</code>, issued a self-signed certificate, enabled <code>mod_ssl</code>, configured an Apache SSL virtual host, and confirmed HTTPS served correctly.</span>
+          </li>
+          <li>
+            <span class="case__lk">Storage operations</span>
+            <span class="case__lv">Created, attached, formatted and mounted EBS volumes; took a snapshot, then restored and resized it onto a new volume; made mounts survive reboot via <code>fstab</code>; and shared an EFS file system across instances.</span>
+          </li>
+          <li>
+            <span class="case__lk">Serverless, S3 &amp; IAM</span>
+            <span class="case__lv">Hosted a static site on S3, wired a Lambda trigger that logs new-object types to CloudWatch, and gave EC2 private access to a second bucket through a VPC endpoint and IAM — no public exposure.</span>
+          </li>
+          <li>
+            <span class="case__lk">Databases</span>
+            <span class="case__lv">Stood up a Multi-AZ RDS MySQL instance and a DynamoDB table, querying the latter with PartiQL.</span>
+          </li>
+          <li>
+            <span class="case__lk">High availability</span>
+            <span class="case__lv">Fronted the app with an Elastic Load Balancer and a target group, then put it behind an Auto Scaling Group with launch templates and dynamic scaling policies — load-tested it to watch scale-out and scale-in events fire, with SNS notifications on each.</span>
+          </li>
+        </ol>
+      </div>
+
+      <div class="case__shots">
+        <figure class="shot">
+          <img src="assets/images/aws/vpc-resource-map.png" alt="AWS VPC resource map: six subnets across three availability zones with public and private route tables" loading="lazy">
+          <figcaption>VPC — 6 subnets across 3 AZs, public/private routing</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/aws/autoscaling-scale-out.png" alt="Auto Scaling Group activity history showing scale-out and scale-in events under load" loading="lazy">
+          <figcaption>Auto Scaling — scale-out / scale-in under load</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/aws/ebs-snapshot-restore.png" alt="Restoring and resizing an EBS volume from a snapshot in the AWS console" loading="lazy">
+          <figcaption>EBS — volume restored &amp; resized from a snapshot</figcaption>
+        </figure>
+      </div>
+
+      <div class="case__lesson" data-reveal>
+        <span class="case__lesson-pin">What it taught me</span>
+        <p>
+          Most of what people call "cloud" is really networking and disciplined access control. The
+          compute is the easy part — the hours go into subnets, routing, security groups and IAM, and
+          that's exactly where a misconfiguration quietly breaks everything or quietly leaves a door open.
+          Watching an Auto Scaling Group add and drop instances on its own under load was the moment it
+          clicked: resilient infrastructure isn't a single big server, it's a system designed to lose
+          pieces and keep running.
+        </p>
+      </div>
+
+      <div class="case__numbers">
+        <div class="num"><span class="num__v">3</span><span class="num__l">Availability zones</span></div>
+        <div class="num"><span class="num__v">14</span><span class="num__l">AWS services, hands-on</span></div>
+        <div class="num"><span class="num__v">6</span><span class="num__l">Subnets routed</span></div>
+        <div class="num"><span class="num__v">HD</span><span class="num__l">Final grade</span></div>
+      </div>
+
+      <ul class="case__stack" role="list">
+        <li>AWS VPC · EC2</li>
+        <li>S3 · IAM · Lambda · CloudWatch</li>
+        <li>RDS · DynamoDB</li>
+        <li>EBS · EFS</li>
+        <li>ELB · Auto Scaling</li>
+        <li>Linux · Apache · openssl</li>
+      </ul>
+    </article>
+
+    <!-- ─────────────  Featured: Grad Job Tracker (LIVE)  ───────────── -->
+    <article class="case case--alt" data-reveal>
+      <header class="case__hdr">
+        <div class="case__index">04</div>
         <span class="case__tag"><span></span>Featured · live tool</span>
         <h3 class="case__title">
           <span>Grad Job</span>
