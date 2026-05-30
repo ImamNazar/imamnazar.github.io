@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What I use — hardware, software, and infrastructure tooling. Mohamed Imam Mohamed Nazar." />
+  <meta name="theme-color" content="#0a0907" />
+  <title>What I use · Mohamed Imam</title>
+
+  <link rel="icon" type="image/png" href="assets/images/tabicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    .uses { max-width: 780px; margin: 0 auto; padding: 100px var(--gutter) 80px; }
+    .uses__back {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--ink-mid);
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      transition: all var(--t-fast) var(--ease);
+    }
+    .uses__back:hover { color: var(--acc); border-bottom-color: var(--acc); }
+    .uses__h1 {
+      font-family: var(--display);
+      font-weight: 400;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.05;
+      margin: 36px 0 24px;
+    }
+    .uses__lede {
+      font-family: var(--body);
+      font-size: 19px;
+      color: var(--ink-soft);
+      max-width: 640px;
+      line-height: 1.65;
+      margin: 0 0 64px;
+    }
+    .uses__lede em {
+      font-style: italic;
+      color: var(--acc);
+    }
+    .uses h2 {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      margin: 56px 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    .uses dl {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 14px 28px;
+      margin: 0 0 28px;
+    }
+    .uses dt {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--acc);
+      padding-top: 3px;
+    }
+    .uses dd {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .uses dd code {
+      font-family: var(--mono);
+      font-size: 0.88em;
+      background: var(--bg-card);
+      padding: 1px 6px;
+      border-radius: 3px;
+      color: var(--ink);
+    }
+    .uses__small {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-mute);
+      margin: 56px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 640px) {
+      .uses dl { grid-template-columns: 1fr; gap: 4px 0; }
+      .uses dd { margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+  </div>
+
+  <section class="uses">
+    <a href="index.html" class="uses__back">◂ Back to portfolio</a>
+
+    <h1 class="uses__h1">What I use.</h1>
+    <p class="uses__lede">
+      A list of the hardware, software, and infrastructure I actually work with day to day —
+      not aspirational gear, just <em>the kit that's open on my screen right now</em>.
+      Inspired by <a href="https://uses.tech" target="_blank" rel="noopener">uses.tech</a>.
+    </p>
+
+    <!-- Hardware & desk -->
+    <h2>Hardware &amp; desk</h2>
+    <dl>
+      <dt>Laptop</dt>
+      <dd>Personal Windows laptop (16&nbsp;GB RAM) — the workhorse for coursework, Docker, and AWS console work.</dd>
+
+      <dt>External display</dt>
+      <dd>Second monitor when at the desk — IDE on one screen, terminal &amp; docs on the other.</dd>
+
+      <dt>Audio</dt>
+      <dd>Wired headphones for focus blocks. No noise-cancelling theatre.</dd>
+
+      <dt>Workspace</dt>
+      <dd>Melbourne. Most weeks: a quiet corner at home or an RMIT study space.</dd>
+    </dl>
+
+    <!-- Editor & dev -->
+    <h2>Editor &amp; development</h2>
+    <dl>
+      <dt>Editor</dt>
+      <dd>Visual Studio Code with the usual extensions: ESLint, Prettier, GitLens, Live Server, Docker. Dark theme.</dd>
+
+      <dt>Terminal</dt>
+      <dd>Windows Terminal with WSL2 (Ubuntu) for any Linux work; PowerShell for native Windows. SSH for everything remote.</dd>
+
+      <dt>Version control</dt>
+      <dd>Git on the command line; GitHub for hosting. Branch-per-feature, conventional commits, PRs even when I'm the only reviewer.</dd>
+
+      <dt>Browser</dt>
+      <dd>Firefox for browsing; Chrome / Chromium for DevTools-heavy debugging. Vivaldi for personal stuff.</dd>
+
+      <dt>API testing</dt>
+      <dd>Postman for REST API exploration. <code>curl</code> when I'm already in the terminal.</dd>
+    </dl>
+
+    <!-- Languages & runtimes -->
+    <h2>Languages &amp; runtimes</h2>
+    <dl>
+      <dt>Daily</dt>
+      <dd>JavaScript (ES6+), Bash, SQL. Whatever the task needs.</dd>
+
+      <dt>Comfortable</dt>
+      <dd>Python, Java, PHP. Used in different projects throughout the degree.</dd>
+
+      <dt>Have shipped</dt>
+      <dd>Node.js, React, Express, Wix Velo. PHP + MySQL stacks for older work.</dd>
+
+      <dt>Curious about</dt>
+      <dd>Rust (currently on the LinkedIn Learning shelf), Go (next).</dd>
+    </dl>
+
+    <!-- Cloud & infra -->
+    <h2>Cloud &amp; infrastructure</h2>
+    <dl>
+      <dt>Cloud</dt>
+      <dd>AWS — EC2, VPC, S3, IAM, RDS, Lambda, CloudWatch, EBS/EFS, ELB &amp; Auto Scaling. Hands-on from Cloud Foundations and DevOps coursework.</dd>
+
+      <dt>Containers</dt>
+      <dd>Docker for everything reproducible. Compose for local multi-service setups.</dd>
+
+      <dt>Infrastructure-as-Code</dt>
+      <dd>Terraform for provisioning, Ansible for configuration management.</dd>
+
+      <dt>CI/CD</dt>
+      <dd>GitHub Actions — builds, tests, PR checks. Branch protections on <code>main</code>.</dd>
+
+      <dt>Linux distro</dt>
+      <dd>Ubuntu Server (LTS) on EC2. <code>vim</code> on remote hosts because that's what's installed.</dd>
+    </dl>
+
+    <!-- Networking & support -->
+    <h2>Networking &amp; support tooling</h2>
+    <dl>
+      <dt>Network analysis</dt>
+      <dd>Cisco Packet Tracer for design and simulation; Wireshark when I need to actually see what's on the wire.</dd>
+
+      <dt>Diagnostics</dt>
+      <dd><code>ping</code>, <code>traceroute</code>, <code>nslookup</code>, <code>dig</code>, <code>ipconfig</code>/<code>ifconfig</code>, <code>netstat</code>, <code>ss</code>. The boring fundamentals.</dd>
+
+      <dt>Linux firewalling</dt>
+      <dd><code>iptables</code> (from the Cyber Security HD assignment) — rule chains, NAT, basic hardening.</dd>
+    </dl>
+
+    <!-- Productivity -->
+    <h2>Communication &amp; productivity</h2>
+    <dl>
+      <dt>Writing</dt>
+      <dd>Markdown for everything I can. Notion for project notes; Apple Notes / OneNote for quick capture.</dd>
+
+      <dt>Office</dt>
+      <dd>Microsoft Office Suite when collaborating with non-technical clients. Excel for stock-take.</dd>
+
+      <dt>Design</dt>
+      <dd>Figma for wireframes and design tokens — used heavily on the Share &amp; Swap Shop client project.</dd>
+
+      <dt>Email</dt>
+      <dd>Gmail. Aggressive filters.</dd>
+    </dl>
+
+    <!-- Now -->
+    <h2>What I'm building right now</h2>
+    <dl>
+      <dt>Client project</dt>
+      <dd>Share &amp; Swap Shop — a full-stack site for a Melbourne pop-up swap collective. Wix Studio + Velo, live REST API integration to Humanitix, server-side secrets management.</dd>
+
+      <dt>Studying</dt>
+      <dd>Working towards CompTIA A+ and Network+ on the side. Sharpening Linux fluency for data-centre support roles.</dd>
+
+      <dt>Applying to</dt>
+      <dd>Graduate IT support, data centre operations, and infrastructure roles in Melbourne. <a href="mailto:mimammnazar@gmail.com">Reach out</a> if you're hiring.</dd>
+    </dl>
+
+    <p class="uses__small">
+      Last updated May 2026.
+      Want to compare? Browse <a href="https://uses.tech" target="_blank" rel="noopener">uses.tech</a> for hundreds of these pages from other devs.
+    </p>
+  </section>
+
+  <script src="assets/js/script.js" defer></script>
+</body>
+</html>

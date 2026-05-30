@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Holocron archive — Mohamed Imam Mohamed Nazar. A Star Wars-themed portfolio for an IT graduate from Melbourne." />
+  <meta name="theme-color" content="#000510" />
+  <title>HOLOCRON · ENCRYPTED TRANSMISSION · MOHAMED IMAM</title>
+  <link rel="icon" type="image/png" href="assets/images/tabicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Cinzel:wght@400;500;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/holocron.css" />
+</head>
+<body data-section="intro">
+
+  <div class="saber-cursor" aria-hidden="true">
+    <div class="saber-cursor__hilt"></div>
+    <div class="saber-cursor__blade"></div>
+  </div>
+
+  <div class="hyperspace" aria-hidden="true">
+    <canvas id="hyper-canvas"></canvas>
+  </div>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div class="tie-flyby" aria-hidden="true">
+    <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <rect x="20" y="5" width="3" height="70" fill="#1a1a1a"/>
+        <rect x="177" y="5" width="3" height="70" fill="#1a1a1a"/>
+        <polygon points="23,8 23,72 50,60 50,20" fill="#1a1a1a" stroke="#2a2a2a"/>
+        <polygon points="177,8 177,72 150,60 150,20" fill="#1a1a1a" stroke="#2a2a2a"/>
+        <line x1="40" y1="15" x2="40" y2="65" stroke="#2a2a2a"/>
+        <line x1="160" y1="15" x2="160" y2="65" stroke="#2a2a2a"/>
+        <circle cx="100" cy="40" r="14" fill="#1a1a1a" stroke="#3a3a3a"/>
+        <circle cx="100" cy="40" r="9" fill="#0a0a0a"/>
+        <circle cx="100" cy="40" r="5" fill="#3a1a1a" stroke="#e63946" stroke-width="0.5"/>
+        <line x1="50" y1="40" x2="86" y2="40" stroke="#2a2a2a" stroke-width="3"/>
+        <line x1="114" y1="40" x2="150" y2="40" stroke="#2a2a2a" stroke-width="3"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="death-star" aria-hidden="true">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="ds-grad" cx="35%" cy="35%">
+          <stop offset="0%" stop-color="#4a4a52"/>
+          <stop offset="60%" stop-color="#1c1c22"/>
+          <stop offset="100%" stop-color="#08080c"/>
+        </radialGradient>
+        <radialGradient id="ds-laser" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#1a1a22"/>
+          <stop offset="80%" stop-color="#0a0a10"/>
+        </radialGradient>
+      </defs>
+      <circle cx="200" cy="200" r="190" fill="url(#ds-grad)"/>
+      <line x1="20" y1="180" x2="380" y2="180" stroke="#0a0a10" stroke-width="3" opacity="0.6"/>
+      <line x1="20" y1="183" x2="380" y2="183" stroke="#2a2a32" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="135" cy="135" r="38" fill="url(#ds-laser)" stroke="#2a2a32" stroke-width="1"/>
+      <circle cx="135" cy="135" r="38" fill="none" stroke="#1a1a22" stroke-width="0.5"/>
+      <line x1="115" y1="135" x2="155" y2="135" stroke="#2a2a32" stroke-width="0.4"/>
+      <line x1="135" y1="115" x2="135" y2="155" stroke="#2a2a32" stroke-width="0.4"/>
+      <circle cx="135" cy="135" r="6" fill="#0a0a10"/>
+      <g fill="#1a1a22" opacity="0.5">
+        <circle cx="240" cy="100" r="1.5"/>
+        <circle cx="280" cy="140" r="1.2"/>
+        <circle cx="310" cy="220" r="1.5"/>
+        <circle cx="260" cy="260" r="1"/>
+        <circle cx="180" cy="290" r="1.2"/>
+        <circle cx="100" cy="240" r="1"/>
+        <circle cx="80" cy="200" r="1.2"/>
+      </g>
+      <g stroke="#1a1a22" stroke-width="0.4" fill="none" opacity="0.5">
+        <path d="M 60 200 Q 200 215 340 200"/>
+        <path d="M 80 230 Q 200 245 320 230"/>
+        <path d="M 100 260 Q 200 270 300 260"/>
+        <path d="M 60 150 Q 200 135 340 150"/>
+        <path d="M 80 120 Q 200 105 320 120"/>
+      </g>
+    </svg>
+  </div>
+
+  <header class="hud">
+    <div class="hud__left">
+      <span class="hud__dot"></span>
+      <span class="hud__label">TRANSMISSION&nbsp;▸&nbsp;DECRYPTED</span>
+      <span class="hud__sep">|</span>
+      <span class="hud__meta">STARDATE&nbsp;2026.05</span>
+    </div>
+    <div class="hud__right">
+      <button class="hud__sound" id="sound-toggle" aria-label="Toggle ambient sound" aria-pressed="false">
+        <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M2 6h2l3-2v8L4 10H2V6z"/>
+          <path d="M10 5c1.5 1 1.5 5 0 6" class="sound-wave"/>
+          <path d="M12 3c3 2 3 8 0 10" class="sound-wave-2"/>
+        </svg>
+        <span class="hud__sound-label">SOUND</span>
+      </button>
+      <a href="index.html" class="hud__exit">◂&nbsp;OFFICIAL&nbsp;CHANNEL</a>
+    </div>
+  </header>
+
+  <button class="droid" id="droid" aria-label="Scroll to top">
+    <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="35" width="40" height="40" fill="#e6e6e6" stroke="#b0b0b0" stroke-width="0.8" rx="2"/>
+      <path d="M 6 35 Q 6 5 30 5 Q 54 5 54 35 Z" fill="#e6e6e6" stroke="#b0b0b0" stroke-width="0.8"/>
+      <circle cx="30" cy="20" r="6" fill="#1a1a22" stroke="#5dc2f2" stroke-width="1"/>
+      <circle cx="30" cy="20" r="3" fill="#5dc2f2" class="droid__eye"/>
+      <rect x="6" y="15" width="3" height="4" fill="#5dc2f2" opacity="0.6"/>
+      <rect x="51" y="15" width="3" height="4" fill="#5dc2f2" opacity="0.6"/>
+      <rect x="14" y="42" width="32" height="8" fill="#5dc2f2" opacity="0.15" stroke="#b0b0b0" stroke-width="0.5"/>
+      <circle cx="20" cy="58" r="3" fill="#5dc2f2" opacity="0.4" stroke="#b0b0b0" stroke-width="0.5"/>
+      <circle cx="40" cy="58" r="3" fill="#1a1a22" stroke="#b0b0b0" stroke-width="0.5"/>
+      <rect x="26" y="55" width="8" height="6" fill="#1a1a22" stroke="#b0b0b0" stroke-width="0.5"/>
+      <rect x="6" y="55" width="6" height="22" fill="#b0b0b0" stroke="#909090" stroke-width="0.5"/>
+      <rect x="48" y="55" width="6" height="22" fill="#b0b0b0" stroke="#909090" stroke-width="0.5"/>
+      <rect x="3" y="73" width="12" height="5" fill="#7a7a7a" rx="1"/>
+      <rect x="45" y="73" width="12" height="5" fill="#7a7a7a" rx="1"/>
+    </svg>
+    <span class="droid__bubble">Beep&nbsp;boop.<br>Top.</span>
+  </button>
+
+  <main>
+
+    <section class="intro" aria-label="Opening" data-section="intro">
+      <p class="long-ago">A long time ago, in a tropical island<br>far, far away&hellip;</p>
+      <p class="intro__hint">▾&nbsp; scroll to begin transmission</p>
+    </section>
+
+    <section class="crawl" aria-label="Opening crawl" data-section="crawl">
+      <div class="crawl__sky">
+        <div class="crawl__content">
+          <p class="crawl__episode">EPISODE&nbsp;VI</p>
+          <h1 class="crawl__title">THE DATA CENTRE<br>BECKONS</h1>
+          <div class="crawl__body">
+            <p>It is a period of digital rebellion. A young apprentice from the island of <strong>SRI LANKA</strong>, having completed his Higher Diploma in Computing &amp; Software Engineering, embarked on a quest across the stars to <strong>MELBOURNE</strong>, where the ancient academy known as <strong>RMIT</strong> trains the next generation in the arts of CLOUD, NETWORK, and CODE.</p>
+            <p>Beneath the southern stars, he has earned distinctions in CLOUD FOUNDATIONS, INTRODUCTION TO CYBER SECURITY, and SYSTEMS DEPLOYMENT &amp; OPERATIONS &mdash; provisioning AWS infrastructure with Terraform, taming Linux servers over SSH, and quenching incidents during retail trading hours.</p>
+            <p>Now he seeks his next mission: to join the operations team of an elite data centre, and bring his hands-on craft to the rebellion against manual configuration&hellip;</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="identity" aria-label="Identity" data-section="identity">
+      <div class="holo-projector" aria-hidden="true">
+        <div class="holo-projector__base"></div>
+        <div class="holo-projector__beam"></div>
+      </div>
+      <div class="holo-content">
+        <p class="identity__tag"><span class="dot"></span>INCOMING&nbsp;TRANSMISSION&nbsp;▸&nbsp;IDENTITY&nbsp;CONFIRMED</p>
+        <h2 class="identity__name">
+          <span class="glitch" data-text="MOHAMED IMAM">MOHAMED&nbsp;IMAM</span>
+          <span class="identity__name-sub">MOHAMED&nbsp;NAZAR</span>
+        </h2>
+        <p class="identity__role">
+          Apprentice Technician&nbsp;·&nbsp;IT&nbsp;Padawan<br>
+          Bachelor of Information Technology · RMIT University · Class of 2026
+        </p>
+        <div class="identity__links">
+          <a href="https://github.com/ImamNazar" target="_blank" rel="noopener" class="saber-link" data-saber="blue">
+            <span class="saber-link__hilt"></span>
+            <span class="saber-link__label">GITHUB&nbsp;ARCHIVES</span>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamed-imam-mohamed-nazar-92148b19a" target="_blank" rel="noopener" class="saber-link" data-saber="green">
+            <span class="saber-link__hilt"></span>
+            <span class="saber-link__label">HOLONET&nbsp;PROFILE</span>
+          </a>
+          <a href="mailto:mimammnazar@gmail.com" class="saber-link" data-saber="violet">
+            <span class="saber-link__hilt"></span>
+            <span class="saber-link__label">SUBSPACE&nbsp;COMMS</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="archives" aria-label="Technical archives" data-section="archives">
+      <header class="section-head">
+        <span class="section-head__num">§&nbsp;01</span>
+        <span class="section-head__label">JEDI&nbsp;ARCHIVES</span>
+        <h3 class="section-head__title">Technical capabilities log</h3>
+      </header>
+
+      <div class="archive-grid">
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">⌬</span><h4 class="datum__h">Cloud&nbsp;&amp;&nbsp;Infrastructure</h4><p class="datum__txt">Multi-AZ AWS environments. VPC, EC2, S3, IAM, RDS, Lambda, CloudWatch, EBS/EFS, ELB/Auto&nbsp;Scaling. Docker, Terraform, Ansible, GitHub Actions. Infrastructure-as-Code from scratch.</p></article>
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">▣</span><h4 class="datum__h">Linux&nbsp;&amp;&nbsp;Servers</h4><p class="datum__txt">Ubuntu administration over SSH. Apache, openssl/TLS, iptables firewalling. Volume mounts, EBS snapshot/restore, EFS shares. Bash, the command line, and the long pause before pressing Enter.</p></article>
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">⟁</span><h4 class="datum__h">Networking</h4><p class="datum__txt">TCP/IP, CIDR subnetting, DNS, routing. Multi-device network design in Cisco Packet Tracer. Site-to-site VPN. Packet analysis across the OSI layers. LAN troubleshooting from the floor up.</p></article>
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">⚙</span><h4 class="datum__h">Hardware&nbsp;&amp;&nbsp;Physical&nbsp;Support</h4><p class="datum__txt">Diagnostics, physical repair, peripheral replacement, workstation builds, cabling, POS terminals, parts &amp; spares rotation. The hands-on side. Near-zero downtime under pressure.</p></article>
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">{ }</span><h4 class="datum__h">Languages&nbsp;&amp;&nbsp;Code</h4><p class="datum__txt">Bash, Python (basic), SQL, JavaScript (ES6+), Java, C#, C++, PHP. Real shipped projects in JavaScript and PHP; scripting Linux and SQL daily.</p></article>
+        <article class="datum"><span class="datum__corner"></span><span class="datum__glyph">◈</span><h4 class="datum__h">Practice</h4><p class="datum__txt">SLA-driven support. Ticket triage and escalation. High-severity ownership. Root-cause analysis. Security best practices. Technical documentation. Speaking plainly to non-technical users.</p></article>
+      </div>
+    </section>
+
+    <section class="missions" aria-label="Mission log" data-section="missions">
+      <header class="section-head">
+        <span class="section-head__num">§&nbsp;02</span>
+        <span class="section-head__label">MISSION&nbsp;LOG</span>
+        <h3 class="section-head__title">Field operations &amp; deployments</h3>
+      </header>
+
+      <article class="mission" data-saber="blue">
+        <aside class="mission__meta">
+          <div class="mission__id">MISSION&nbsp;01</div>
+          <div class="mission__stardate">STARDATE&nbsp;2024.05</div>
+          <div class="mission__grade">RATING&nbsp;▸&nbsp;HIGH&nbsp;DISTINCTION</div>
+          <div class="mission__saber" aria-hidden="true"><span class="mission__saber-hilt"></span><span class="mission__saber-blade"></span></div>
+        </aside>
+        <div class="mission__body">
+          <h4 class="mission__title">AWS Cloud Infrastructure Build</h4>
+          <p class="mission__brief">Re-platform a small business website as a real cloud deployment &mdash; isolated networking across three availability zones, encrypted traffic, durable storage, and a web tier that survives load and instance failure.</p>
+          <ul class="mission__hits">
+            <li><span class="mission__lk">VPC across 3 AZs</span> &mdash; six subnets, route tables, internet/NAT gateways, site-to-site VPN to an on-premises network.</li>
+            <li><span class="mission__lk">Linux compute</span> &mdash; EC2 over SSH, Apache + MariaDB + PHP, TLS via openssl, persistent Elastic IP.</li>
+            <li><span class="mission__lk">Storage ops</span> &mdash; EBS attach/format/mount, snapshot, restore, resize; EFS shared across instances.</li>
+            <li><span class="mission__lk">High availability</span> &mdash; ELB &middot; Auto Scaling Group &middot; load-tested scale-out &amp; scale-in with SNS alerts.</li>
+          </ul>
+          <p class="mission__quote">&ldquo;Most of what people call cloud is really networking and disciplined access control.&rdquo;</p>
+        </div>
+      </article>
+
+      <article class="mission" data-saber="green">
+        <aside class="mission__meta">
+          <div class="mission__id">MISSION&nbsp;02</div>
+          <div class="mission__stardate">STARDATE&nbsp;2024.06</div>
+          <div class="mission__grade">RATING&nbsp;▸&nbsp;DISTINCTION</div>
+          <div class="mission__saber" aria-hidden="true"><span class="mission__saber-hilt"></span><span class="mission__saber-blade"></span></div>
+        </aside>
+        <div class="mission__body">
+          <h4 class="mission__title">DevOps Pipeline &amp; Cloud Deployment Automation</h4>
+          <p class="mission__brief">Build a CI/CD pipeline and provision Linux infrastructure from code &mdash; no clicking through consoles.</p>
+          <ul class="mission__hits">
+            <li><span class="mission__lk">Infrastructure-as-Code</span> &mdash; Terraform provisions EC2, Ansible configures the host.</li>
+            <li><span class="mission__lk">Containers</span> &mdash; Docker-packaged Node.js + PostgreSQL deployed reproducibly.</li>
+            <li><span class="mission__lk">CI in GitHub Actions</span> &mdash; build, test, and pull-request checks for every change.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="mission" data-saber="violet">
+        <aside class="mission__meta">
+          <div class="mission__id">MISSION&nbsp;03</div>
+          <div class="mission__stardate">STARDATE&nbsp;2024.10</div>
+          <div class="mission__grade">RATING&nbsp;▸&nbsp;COMPLETED</div>
+          <div class="mission__saber" aria-hidden="true"><span class="mission__saber-hilt"></span><span class="mission__saber-blade"></span></div>
+        </aside>
+        <div class="mission__body">
+          <h4 class="mission__title">Enterprise Network Design &amp; Packet Analysis</h4>
+          <p class="mission__brief">Designed multi-device networks in Cisco Packet Tracer &mdash; routers, switches, servers, TCP/UDP services &mdash; with CIDR subnetting and DNS/TCP packet analysis across OSI layers.</p>
+        </div>
+      </article>
+
+      <article class="mission" data-saber="amber">
+        <aside class="mission__meta">
+          <div class="mission__id">MISSION&nbsp;04</div>
+          <div class="mission__stardate">STARDATE&nbsp;2026.03</div>
+          <div class="mission__grade">RATING&nbsp;▸&nbsp;IN&nbsp;PROGRESS</div>
+          <div class="mission__saber" aria-hidden="true"><span class="mission__saber-hilt"></span><span class="mission__saber-blade"></span></div>
+        </aside>
+        <div class="mission__body">
+          <h4 class="mission__title">Share &amp; Swap Shop &mdash; live client project</h4>
+          <p class="mission__brief">A full-stack website for a Melbourne pop-up swap collective, with REST API integration to Humanitix and zero manual updates required from the client.</p>
+          <ul class="mission__hits">
+            <li><span class="mission__lk">Secrets management</span> &mdash; remediated a hardcoded API credential vulnerability.</li>
+            <li><span class="mission__lk">Performance</span> &mdash; server-side caching layer (10s TTL + promise deduplication) for concurrent requests.</li>
+            <li><span class="mission__lk">Debugging</span> &mdash; fixed four production bugs including a silent filter caused by JavaScript's <code>undefined === true</code>.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="training" aria-label="Training record" data-section="training">
+      <header class="section-head">
+        <span class="section-head__num">§&nbsp;03</span>
+        <span class="section-head__label">TRAINING&nbsp;RECORD</span>
+        <h3 class="section-head__title">Service history &amp; instruction</h3>
+      </header>
+      <ol class="timeline">
+        <li class="timeline__node"><div class="timeline__when">2023&nbsp;&mdash;&nbsp;2026</div><div class="timeline__what"><h4>Bachelor of Information Technology</h4><p>RMIT University, Melbourne. High Distinctions in Cloud Foundations, Introduction to Cyber Security, Innovation Ecosystem &amp; Future of Work. Distinctions in Systems Deployment &amp; Operations and Essentials of IT &amp; Ethics.</p></div></li>
+        <li class="timeline__node"><div class="timeline__when">2023&nbsp;&mdash;&nbsp;2024</div><div class="timeline__what"><h4>Business Executive &amp; IT Specialist</h4><p>AWS Trading (Pvt) Ltd, Sri Lanka (no relation to Amazon Web Services). Sole on-site IT support owner and escalation point. Hardware, network, and POS troubleshooting across the business; near-zero downtime under trading-floor pressure.</p></div></li>
+        <li class="timeline__node"><div class="timeline__when">2020&nbsp;&mdash;&nbsp;2022</div><div class="timeline__what"><h4>Higher Diploma in Computing &amp; Software Engineering</h4><p>ICBT Campus, Sri Lanka. Capstone: MkCare hospital management system &mdash; three role-based interfaces sharing one MySQL database.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="comms" aria-label="Contact" data-section="comms">
+      <header class="section-head">
+        <span class="section-head__num">§&nbsp;04</span>
+        <span class="section-head__label">OPEN&nbsp;COMM&nbsp;CHANNEL</span>
+        <h3 class="section-head__title">Reach out &mdash; this transmission is two-way</h3>
+      </header>
+      <div class="comms__grid">
+        <a class="comms__card" href="mailto:mimammnazar@gmail.com"><span class="comms__label">SUBSPACE&nbsp;COMMS</span><span class="comms__val">mimammnazar@gmail.com</span></a>
+        <a class="comms__card" href="tel:+61459992281"><span class="comms__label">DIRECT&nbsp;FREQUENCY</span><span class="comms__val">0459&nbsp;992&nbsp;281</span></a>
+        <a class="comms__card" href="https://github.com/ImamNazar" target="_blank" rel="noopener"><span class="comms__label">CODE&nbsp;ARCHIVES</span><span class="comms__val">github.com/ImamNazar</span></a>
+        <a class="comms__card" href="https://www.linkedin.com/in/mohamed-imam-mohamed-nazar-92148b19a" target="_blank" rel="noopener"><span class="comms__label">HOLONET&nbsp;PROFILE</span><span class="comms__val">linkedin.com/in/mohamed-imam-mohamed-nazar</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="binary-sunset" aria-hidden="true">
+      <div class="sun sun--big"></div>
+      <div class="sun sun--small"></div>
+      <div class="horizon"></div>
+    </div>
+    <p class="foot__blessing">MAY&nbsp;THE&nbsp;FORCE&nbsp;BE&nbsp;WITH&nbsp;YOU.</p>
+    <p class="foot__small">An alternate holocron archive · The official portfolio lives at <a href="index.html">imamnazar.github.io</a></p>
+  </footer>
+
+  <script src="assets/js/holocron.js" defer></script>
+</body>
+</html>

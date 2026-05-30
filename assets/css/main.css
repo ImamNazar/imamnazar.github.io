@@ -1123,6 +1123,28 @@ code {
   gap: 14px;
   margin: 36px 0;
 }
+
+.case__arch {
+  margin: 36px 0;
+  border: 1px solid var(--line-mid);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.case__arch img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--line);
+}
+.case__arch figcaption {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mid);
+  padding: 14px 18px;
+  line-height: 1.65;
+}
 .shot {
   margin: 0;
   border: 1px solid var(--line-mid);

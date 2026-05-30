@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-labelledby="vpc-title vpc-desc" font-family="JetBrains Mono, monospace">
+  <title id="vpc-title">AWS VPC architecture: VPC across three availability zones</title>
+  <desc id="vpc-desc">A VPC spanning three availability zones, each containing a public and a private subnet. Public subnets host an Elastic Load Balancer fronting an Auto Scaling Group of EC2 instances. Private subnets host RDS. NAT and Internet Gateways provide outbound and inbound traffic. A site-to-site VPN connects the VPC to an on-premises network. S3 access is via a VPC endpoint.</desc>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="#0a0907"/>
+
+  <defs>
+    <pattern id="dots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.6" fill="rgba(244, 238, 226, 0.05)"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#d4ff3a"/>
+    </marker>
+    <marker id="arrow-dim" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#948c7c"/>
+    </marker>
+  </defs>
+  <rect width="900" height="480" fill="url(#dots)"/>
+
+  <!-- VPC boundary -->
+  <rect x="120" y="60" width="700" height="370" fill="none" stroke="rgba(244, 238, 226, 0.18)" stroke-width="1" stroke-dasharray="4,3" rx="4"/>
+  <text x="135" y="80" fill="#cfc8b7" font-size="11" letter-spacing="1.5">VPC · 10.0.0.0/16</text>
+
+  <!-- Internet Gateway -->
+  <g transform="translate(60, 200)">
+    <rect width="60" height="40" fill="#100e0b" stroke="#d4ff3a" stroke-width="1.2" rx="3"/>
+    <text x="30" y="18" fill="#d4ff3a" font-size="9" text-anchor="middle" letter-spacing="0.5">IGW</text>
+    <text x="30" y="30" fill="#cfc8b7" font-size="7.5" text-anchor="middle">Internet</text>
+  </g>
+
+  <!-- ELB row -->
+  <g transform="translate(170, 110)">
+    <rect width="600" height="44" fill="rgba(212, 255, 58, 0.04)" stroke="#d4ff3a" stroke-width="1" rx="3"/>
+    <text x="300" y="18" fill="#d4ff3a" font-size="10" text-anchor="middle" letter-spacing="1">ELASTIC LOAD BALANCER</text>
+    <text x="300" y="33" fill="#cfc8b7" font-size="8.5" text-anchor="middle">distributes across availability zones</text>
+  </g>
+
+  <!-- AZ columns: us-east-1a / 1b / 1c -->
+  <g id="az-a" transform="translate(170, 170)">
+    <rect width="180" height="240" fill="rgba(244, 238, 226, 0.025)" stroke="rgba(244, 238, 226, 0.1)" stroke-width="1" rx="3"/>
+    <text x="12" y="18" fill="#cfc8b7" font-size="9" letter-spacing="1">AZ · us-east-1a</text>
+
+    <!-- public subnet -->
+    <rect x="12" y="30" width="156" height="86" fill="none" stroke="rgba(212, 255, 58, 0.25)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="46" fill="#d4ff3a" font-size="8" letter-spacing="0.5">public-subnet-1a</text>
+    <rect x="55" y="56" width="70" height="44" fill="#14110d" stroke="#d4ff3a" stroke-width="1" rx="3"/>
+    <text x="90" y="74" fill="#d4ff3a" font-size="9" text-anchor="middle">EC2</text>
+    <text x="90" y="88" fill="#cfc8b7" font-size="7" text-anchor="middle">Apache · PHP</text>
+
+    <!-- private subnet -->
+    <rect x="12" y="130" width="156" height="98" fill="none" stroke="rgba(180, 180, 240, 0.2)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="146" fill="#a8a8d8" font-size="8" letter-spacing="0.5">private-subnet-1a</text>
+    <rect x="55" y="158" width="70" height="34" fill="#14110d" stroke="#a8a8d8" stroke-width="1" rx="3"/>
+    <text x="90" y="178" fill="#a8a8d8" font-size="9" text-anchor="middle">RDS</text>
+    <rect x="55" y="200" width="70" height="20" fill="#14110d" stroke="rgba(180, 180, 240, 0.5)" stroke-width="1" rx="3"/>
+    <text x="90" y="213" fill="#a8a8d8" font-size="7.5" text-anchor="middle">EFS · EBS</text>
+  </g>
+
+  <g id="az-b" transform="translate(360, 170)">
+    <rect width="180" height="240" fill="rgba(244, 238, 226, 0.025)" stroke="rgba(244, 238, 226, 0.1)" stroke-width="1" rx="3"/>
+    <text x="12" y="18" fill="#cfc8b7" font-size="9" letter-spacing="1">AZ · us-east-1b</text>
+
+    <rect x="12" y="30" width="156" height="86" fill="none" stroke="rgba(212, 255, 58, 0.25)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="46" fill="#d4ff3a" font-size="8" letter-spacing="0.5">public-subnet-1b</text>
+    <rect x="55" y="56" width="70" height="44" fill="#14110d" stroke="#d4ff3a" stroke-width="1" rx="3"/>
+    <text x="90" y="74" fill="#d4ff3a" font-size="9" text-anchor="middle">EC2</text>
+    <text x="90" y="88" fill="#cfc8b7" font-size="7" text-anchor="middle">Apache · PHP</text>
+
+    <rect x="12" y="130" width="156" height="98" fill="none" stroke="rgba(180, 180, 240, 0.2)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="146" fill="#a8a8d8" font-size="8" letter-spacing="0.5">private-subnet-1b</text>
+    <rect x="55" y="158" width="70" height="34" fill="#14110d" stroke="#a8a8d8" stroke-width="1" rx="3"/>
+    <text x="90" y="178" fill="#a8a8d8" font-size="9" text-anchor="middle">RDS</text>
+    <rect x="55" y="200" width="70" height="20" fill="#14110d" stroke="rgba(180, 180, 240, 0.5)" stroke-width="1" rx="3"/>
+    <text x="90" y="213" fill="#a8a8d8" font-size="7.5" text-anchor="middle">EFS · EBS</text>
+  </g>
+
+  <g id="az-c" transform="translate(550, 170)">
+    <rect width="180" height="240" fill="rgba(244, 238, 226, 0.025)" stroke="rgba(244, 238, 226, 0.1)" stroke-width="1" rx="3"/>
+    <text x="12" y="18" fill="#cfc8b7" font-size="9" letter-spacing="1">AZ · us-east-1c</text>
+
+    <rect x="12" y="30" width="156" height="86" fill="none" stroke="rgba(212, 255, 58, 0.25)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="46" fill="#d4ff3a" font-size="8" letter-spacing="0.5">public-subnet-1c</text>
+    <rect x="55" y="56" width="70" height="44" fill="#14110d" stroke="#d4ff3a" stroke-width="1" rx="3"/>
+    <text x="90" y="74" fill="#d4ff3a" font-size="9" text-anchor="middle">EC2</text>
+    <text x="90" y="88" fill="#cfc8b7" font-size="7" text-anchor="middle">Apache · PHP</text>
+
+    <rect x="12" y="130" width="156" height="98" fill="none" stroke="rgba(180, 180, 240, 0.2)" stroke-width="1" stroke-dasharray="3,2" rx="2"/>
+    <text x="20" y="146" fill="#a8a8d8" font-size="8" letter-spacing="0.5">private-subnet-1c</text>
+    <rect x="55" y="158" width="70" height="34" fill="#14110d" stroke="#a8a8d8" stroke-width="1" rx="3"/>
+    <text x="90" y="178" fill="#a8a8d8" font-size="9" text-anchor="middle">RDS</text>
+    <rect x="55" y="200" width="70" height="20" fill="#14110d" stroke="rgba(180, 180, 240, 0.5)" stroke-width="1" rx="3"/>
+    <text x="90" y="213" fill="#a8a8d8" font-size="7.5" text-anchor="middle">EFS · EBS</text>
+  </g>
+
+  <!-- NAT Gateway, S3 endpoint, VPN gateway on the right side -->
+  <g transform="translate(780, 200)">
+    <rect width="60" height="34" fill="#100e0b" stroke="#d4ff3a" stroke-width="1" rx="3"/>
+    <text x="30" y="14" fill="#d4ff3a" font-size="8" text-anchor="middle">NAT GW</text>
+    <text x="30" y="26" fill="#cfc8b7" font-size="7" text-anchor="middle">outbound</text>
+  </g>
+
+  <g transform="translate(780, 250)">
+    <rect width="60" height="34" fill="#100e0b" stroke="#a8a8d8" stroke-width="1" rx="3"/>
+    <text x="30" y="14" fill="#a8a8d8" font-size="8" text-anchor="middle">S3 EP</text>
+    <text x="30" y="26" fill="#cfc8b7" font-size="7" text-anchor="middle">private</text>
+  </g>
+
+  <g transform="translate(780, 300)">
+    <rect width="60" height="40" fill="#100e0b" stroke="#d4ff3a" stroke-width="1.2" rx="3"/>
+    <text x="30" y="16" fill="#d4ff3a" font-size="8" text-anchor="middle">VGW</text>
+    <text x="30" y="29" fill="#cfc8b7" font-size="7" text-anchor="middle">VPN</text>
+  </g>
+
+  <!-- Connections -->
+  <!-- IGW to ELB -->
+  <line x1="120" y1="220" x2="170" y2="132" stroke="#d4ff3a" stroke-width="1" stroke-opacity="0.6"/>
+  <!-- ELB to each AZ public EC2 (already aligned visually) -->
+
+  <!-- On-premises network on left bottom -->
+  <g transform="translate(35, 380)">
+    <rect width="80" height="44" fill="#100e0b" stroke="#cfc8b7" stroke-width="1" stroke-dasharray="2,2" rx="3"/>
+    <text x="40" y="18" fill="#cfc8b7" font-size="8.5" text-anchor="middle" letter-spacing="0.5">ON-PREMISES</text>
+    <text x="40" y="32" fill="#948c7c" font-size="7.5" text-anchor="middle">192.168.10.0/24</text>
+  </g>
+
+  <!-- VPN tunnel: from on-prem to VGW (curve) -->
+  <path d="M 115 402 Q 460 460 810 340" fill="none" stroke="#d4ff3a" stroke-width="1.2" stroke-dasharray="5,3" stroke-opacity="0.55"/>
+  <text x="460" y="455" fill="#d4ff3a" font-size="8.5" text-anchor="middle" letter-spacing="0.6">site-to-site VPN</text>
+
+  <!-- Legend -->
+  <g transform="translate(135, 95)">
+    <circle cx="0" cy="0" r="3" fill="#d4ff3a"/>
+    <text x="10" y="3" fill="#cfc8b7" font-size="8">public</text>
+    <circle cx="60" cy="0" r="3" fill="#a8a8d8"/>
+    <text x="70" y="3" fill="#cfc8b7" font-size="8">private</text>
+  </g>
+
+  <!-- Caption at bottom-right -->
+  <text x="880" y="468" fill="#5b554c" font-size="8.5" text-anchor="end" letter-spacing="0.4">RMIT · Cloud Foundations · High Distinction</text>
+</svg>
